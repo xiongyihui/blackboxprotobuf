@@ -240,6 +240,8 @@ def decode_message(buf, typedef=None, pos=0, end=None, group=False):
                     field_typedef['alt_typedefs'][alt_field_number] = message_typedef
                     field_number = field_number + "-" + alt_field_number
             elif field_type == 'group':
+                if group:
+                    raise ValueError('Not support nested groups')
                 group_typedef = None
                 # Check for a anonymous type
                 if 'group_typedef' in field_typedef:
