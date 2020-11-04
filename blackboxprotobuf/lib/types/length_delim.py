@@ -140,9 +140,9 @@ def decode_message(buf, typedef=None, pos=0, end=None, group=False):
 
     if typedef is None:
         typedef = {}
-    else:
-        # Don't want to accidentally modify the original
-        typedef = copy.deepcopy(typedef)
+    # else:
+    #     # Don't want to accidentally modify the original
+    #     typedef = copy.deepcopy(typedef)
 
     output = {}
 
