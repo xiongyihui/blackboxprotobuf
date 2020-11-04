@@ -135,7 +135,7 @@ def decode_message(buf, typedef=None, pos=0, end=None, group=False):
     """Decode a protobuf message with no length delimiter"""
     if end is None:
         end = len(buf)
-    elif pos >= end:
+    elif len(buf) < end or pos >= end:
         raise decoder._DecodeError("Invalid Message Length")
 
     if typedef is None:
